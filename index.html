@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://icons.iconarchive.com/icons/robinweatherall/seasonal/256/cloud-icon.png" type="image/x-icon"/>
+    <title>Rain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="btn" >Play</button>
+    <div class="bg">
+        <div class="rain"></div>
+        <img src="./cloud1.png" alt="cloud" style="--time: 2">
+        <img src="./cloud2.png" alt="cloud" style="--time: 3">
+        <img src="./cloud3.png" alt="cloud" style="--time: 4">
+        <img src="./cloud4.png" alt="cloud" style="--time: 5">
+    </div>
+    <audio id="audio" src="https://rainymood.com/audio1112/0.m4a"></audio>
+</body>
+
+<script>
+    const audio = document.querySelector("#audio");
+    const button = document.querySelector(".btn");
+    const audioPlay = ()=>{
+        console.log("đ")
+        if(audio.paused) {
+            audio.play();
+            button.innerHTML = "Pause";
+        } else{
+            audio.pause();
+            button.innerHTML = "Play";
+        }
+    }
+    button.addEventListener("click", audioPlay)
+</script>
+</html>
